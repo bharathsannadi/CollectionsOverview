@@ -1,31 +1,21 @@
 import java.util.*;
 
+import static java.util.Arrays.asList;
+
 public class Main {
 
     public static void main(String[] args) {
-        Collection<String> stringsInACollection = new ArrayList<String>();
-        stringsInACollection.add("String One");
-        stringsInACollection.add("String Two");
-        stringsInACollection.add("String One");
-        for (String aString : stringsInACollection){
-            System.out.println(aString);
-        }
+        StringCollection stringCollection = new StringCollection(new ArrayList<String>(), "String One", "String Two", "String One");
+        stringCollection.print();
 
         System.out.println();
 
-        List<String> stringsInAList = new ArrayList<String>();
-        stringsInAList.add("String One");
-        stringsInAList.add("String Two");
-        stringsInAList.add("String One");
-        System.out.println(stringsInAList.get(1));
+        List<String> stringList = new ArrayList(asList("String One", "String Two", "String One"));
+        System.out.println(stringList.get(1));
 
         System.out.println();
 
-        Collection<String> otherStrings = new HashSet<String>();
-        otherStrings.add("String One");
-        otherStrings.add("String Two");
-        for (String aString : otherStrings){
-            System.out.println(aString);
-        }
+        StringCollection stringSet = new StringCollection(new HashSet<String>(), "String One", "String Two");
+        stringSet.print();
     }
 }
